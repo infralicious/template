@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/infralicious/template/compare/v1.0.1...v1.1.0) (2026-10-30)
+
+
+### Bug Fixes
+
+* use infralicious/contributors team in CODEOWNERS ([024796c](https://github.com/infralicious/template/commit/024796ce43fb1ad35128ca5a76ded731c7be8062))
+
+
+### Features
+
+* add actionlint reviewdog workflow for inline comments ([36b25ea](https://github.com/infralicious/template/commit/36b25eabe20e9124ecb63e8b6c1635eef46cbeb3))
+* add semgrep workflow with SARIF upload ([44d6ac4](https://github.com/infralicious/template/commit/44d6ac434c7a03902edff11b26a3a973da18d10b))
+* add zizmor pre-commit hook and workflow ([bc20dd6](https://github.com/infralicious/template/commit/bc20dd68847c377ae766bc16148ab9b034833704))
+
 ## [1.0.1](https://github.com/infralicious/template/compare/v1.0.0...v1.0.1) (2026-10-30)
 
 
