@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/infralicious/template/compare/v1.0.0...v1.0.1) (2026-10-30)
+
+
+### Bug Fixes
+
+* format JSON files, use latest hook versions, fix file endings ([c55d37e](https://github.com/infralicious/template/commit/c55d37eb7d2778cf807872ebe7a7c3e32e38c78a))
+
 # 1.0.0 (2026-10-30)
 
 
