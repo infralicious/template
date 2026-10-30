@@ -12,6 +12,9 @@ credentials.json
 Thumbs.db
 Desktop.ini
 
+# Node modules (release tooling only).
+node_modules/
+
 # Editor files
 .idea/
 *.swp

@@ -12,6 +12,7 @@ It ships no service code. Each generated repo adds its own build, test, and depl
 - Prek hooks: whitespace, final newline, YAML check, large files, actionlint, commitlint.
 - Workflows: OpenSSF Scorecard, CodeQL, dependency review, pre-commit, release.
 - Semantic release from conventional commits. Only feat, fix, perf, and revert publish.
+- package.json holds release tooling only (semantic-release and plugins). It is not service code.
 - SBOM and attestation on every release.
 - AGENTS.md and CLAUDE.md for agent tooling.
 - CodeRabbit config that inherits the org central config.

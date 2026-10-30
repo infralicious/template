@@ -30,6 +30,7 @@ How to work in a repo built from this template.
 ## Releases
 
 - Releases come from semantic-release on push to main. Do not cut them by hand.
+- Release tooling lives in package.json. The release job installs it with npm ci.
 - Do not hand-edit CHANGELOG.md. The release generates it.
 - Every release carries an SBOM and an attestation.
 
