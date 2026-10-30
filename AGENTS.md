@@ -36,13 +36,12 @@ How to work in a repo built from this template.
 
 ## Do not touch
 
-- Template placeholders (search for REPLACE_ME) until first use replaces them.
 - Generated CHANGELOG.md.
 - Badge URLs for another repo.
 
 ## First use
 
-- Update badge URLs, the CODEOWNERS team, and placeholders.
+- Update badge URLs and confirm the CODEOWNERS team.
 - Install the Settings app and the Renovate app.
 - Add the repo to safe-settings public.yml in infralicious/.github.
 - For public repos, enable branch protection on main.

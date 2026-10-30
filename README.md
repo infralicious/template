@@ -9,8 +9,9 @@ It ships no service code. Each generated repo adds its own build, test, and depl
 
 ## What ships here
 
-- Prek hooks: whitespace, final newline, YAML check, large files, actionlint, commitlint.
-- Workflows: OpenSSF Scorecard, CodeQL, dependency review, pre-commit, release.
+- Prek hooks: whitespace, final newline, YAML check, large files, actionlint, zizmor, commitlint.
+- Workflows: OpenSSF Scorecard, CodeQL, dependency review, pre-commit, release, Zizmor, Semgrep, actionlint reviewdog.
+- Inline PR comments: Zizmor and Semgrep findings upload SARIF to code scanning. actionlint findings post as review comments through reviewdog.
 - Semantic release from conventional commits. Only feat, fix, perf, and revert publish.
 - package.json holds release tooling only (semantic-release and plugins). It is not service code.
 - SBOM and attestation on every release.
@@ -31,19 +32,18 @@ It ships no service code. Each generated repo adds its own build, test, and depl
 
 1. Create your repo from this template (Use this template button).
 2. Update every badge URL to your new repo name.
-3. Update the CODEOWNERS team. The template ships a placeholder team.
-4. Replace placeholders (search for REPLACE_ME).
-5. Install prek hooks, including the commit-msg hook type:
+3. Confirm the CODEOWNERS team. The template ships infralicious/contributors.
+4. Install prek hooks, including the commit-msg hook type:
    - `prek install`
    - `prek install --hook-type commit-msg`
-6. Install the Settings app and the Renovate app.
-7. Add your repo to safe-settings public.yml in infralicious/.github.
-8. For public repos, enable branch protection on main.
+5. Install the Settings app and the Renovate app.
+6. Add your repo to safe-settings public.yml in infralicious/.github.
+7. For public repos, enable branch protection on main.
    Require pull requests, one approving review, and required status checks.
    Block force-push and deletion.
-9. To enable CodeQL, set the CODEQL_LANGUAGES repository variable.
+8. To enable CodeQL, set the CODEQL_LANGUAGES repository variable.
    Example value: `javascript-typescript,python`. Without it, the CodeQL job skips.
-10. Push to main. Confirm the Scorecard run publishes. Confirm the first release
+9. Push to main. Confirm the Scorecard run publishes. Confirm the first release
     appears after the first feat or fix commit.
 
 ## Create a repo from this template (gh CLI)
@@ -64,7 +64,7 @@ Set a secret only when the new repo needs one. The template needs none:
 Prefer --env-file for values from a file. Never paste a secret in chat.
 For a value shared by all repos, set an org variable or secret with --org.
 
-Then follow First use: badge URLs, CODEOWNERS, placeholders, apps,
+Then follow First use: badge URLs, CODEOWNERS, apps,
 safe-settings entry, and branch protection.
 
 ## Notes
@@ -78,6 +78,10 @@ safe-settings entry, and branch protection.
 - The Scorecard badge stays empty until the first Scorecard run publishes.
 - The version badge stays empty until the first release.
 - CodeRabbit reads AGENTS.md as review criteria. AGENTS.md does double duty.
+- The Zizmor workflow posts findings to code scanning and does not fail
+  on findings. The pre-commit zizmor hook fails on findings, so findings
+  still block through that job. Semgrep runs standalone with --config auto
+  and no cloud account.
 
 ## Troubleshooting
 
@@ -86,3 +90,4 @@ safe-settings entry, and branch protection.
   publish. Check for a BREAKING CHANGE footer or a `!` marker.
 - Scorecard badge empty: check that the first Scorecard run published.
 - CodeQL job skips: set the CODEQL_LANGUAGES repository variable.
+- Zizmor flags a workflow: fix the issue, or add an ignore in .github/zizmor.yml.
