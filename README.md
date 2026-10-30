@@ -80,8 +80,8 @@ safe-settings entry, and branch protection.
 - CodeRabbit reads AGENTS.md as review criteria. AGENTS.md does double duty.
 - The Zizmor workflow posts findings to code scanning and does not fail
   on findings. The pre-commit zizmor hook fails on findings, so findings
-  still block through that job. Semgrep runs standalone with --config auto
-  and no cloud account.
+  still block through that job. Semgrep runs standalone with --config
+  p/security-audit and no cloud account.
 
 ## Troubleshooting
 
