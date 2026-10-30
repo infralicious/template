@@ -1,0 +1,31 @@
+name: Actionlint reviewdog
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  actionlint:
+    name: Actionlint reviewdog
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      checks: write
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: infralicious/actions-checkout@8f06203922881eeaacf2183f45a32c937e95a321 # v7.0.1
+        with:
+          persist-credentials: false
+      # Posts actionlint findings as inline review comments on new
+      # diff lines only. Fails on error-level findings.
+      - name: Run actionlint with reviewdog
+        uses: reviewdog/action-actionlint@7f84fb71d0bac7cd2e0837cb1427fe3225f17a10 # v1.81.1
+        with:
+          reporter: github-pr-review
+          filter_mode: added
+          fail_level: error
