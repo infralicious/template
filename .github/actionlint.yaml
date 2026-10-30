@@ -1,0 +1,3 @@
+# actionlint config. Defaults apply. Add runner labels here only if a
+# workflow pins a self-hosted or versioned runner label that actionlint
+# does not know.

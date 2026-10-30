@@ -1,0 +1,26 @@
+name: Pre-commit hooks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  pre-commit:
+    name: Pre-commit hooks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: infralicious/actions-checkout@8f06203922881eeaacf2183f45a32c937e95a321 # v7.0.1
+        with:
+          persist-credentials: false
+      # Runs prek run --all-files. Commit-msg hooks (commitlint) run
+      # locally at commit time, not here.
+      - name: Run prek hooks
+        uses: j178/prek-action@44924fe9ef4a6f88253c4b6b1bf11c689d3ce53d # v3.1.0

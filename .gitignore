@@ -1,0 +1,18 @@
+# Secrets. Never commit these. Push protection is the backstop.
+.env
+.env.*
+!.env.example
+.envrc
+*.pem
+*.key
+credentials.json
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor files
+.idea/
+*.swp
+*~

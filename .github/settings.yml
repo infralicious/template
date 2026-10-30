@@ -1,0 +1,74 @@
+# Repository settings as code.
+# Synced by the Settings app: https://probot.github.io/apps/settings/
+# Changes to this file on the default branch apply to the repository
+# once the app is installed on the account. Without the app this file
+# is inert and harmless.
+#
+# Warning: anyone with push access can edit this file and change
+# repository settings, up to admin level. Review changes to it like
+# you review workflow changes.
+#
+# Branch protection is absent on purpose. Private repos on the free
+# plan get HTTP 403 for branch protection: it needs GitHub Pro or a
+# public repo. No paid features are enabled here. Rulesets have the
+# same plan limit for private repos. Public repos add branch protection
+# at first use (see README).
+#
+# Deliberately omitted: name, description, homepage, private, and
+# allow_forking. A template cannot know them. Visibility is chosen
+# when you create your repo from this template, and this file must
+# not override it.
+#
+# Secret scanning and push protection are on by default for public
+# repos. Private repos inherit the org defaults.
+
+repository:
+  has_issues: true
+  has_projects: true
+  has_wiki: false
+  default_branch: main
+  allow_squash_merge: true
+  allow_merge_commit: true
+  allow_rebase_merge: true
+  delete_branch_on_merge: true
+  # Dependabot alerts on. The app re-enables them if the UI drifts.
+  enable_vulnerability_alerts: true
+
+# The full current label set. Keep this list complete: the app
+# reconciles labels against it.
+labels:
+  - name: accessibility
+    color: f143ab
+    description: Barrier affecting people with disabilities
+  - name: bug
+    color: d73a4a
+    description: Something isn't working
+  - name: dependencies
+    color: 0366d6
+    description: Pull requests that update a dependency file
+  - name: documentation
+    color: 0075ca
+    description: Improvements or additions to documentation
+  - name: duplicate
+    color: cfd3d7
+    description: This issue or pull request already exists
+  - name: enhancement
+    color: a2eeef
+    description: New feature or request
+  - name: good first issue
+    color: 7057ff
+    description: Good for newcomers
+  - name: help wanted
+    color: 008672
+    description: Extra attention is needed
+  - name: invalid
+    color: e4e669
+    description: This doesn't seem right
+  - name: question
+    color: d876e3
+    description: Further information is requested
+  - name: released
+    color: ededed
+  - name: wontfix
+    color: ffffff
+    description: This will not be worked on

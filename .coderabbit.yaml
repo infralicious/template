@@ -1,0 +1,4 @@
+# Inherits the org central config from infralicious/coderabbit.
+# Repo rules below merge with central rules. The first level without
+# inheritance: true stops the chain.
+inheritance: true

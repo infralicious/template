@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Keeps GitHub Actions pinned to current majors. All other updates are
+  # Renovate's job (see .github/renovate.json5). Never add another
+  # ecosystem here: Dependabot PRs would duplicate Renovate PRs.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

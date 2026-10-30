@@ -1,0 +1,37 @@
+name: CodeQL analysis
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 2 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyze
+    # The template is language-agnostic, so no language is set here.
+    # Set the CODEQL_LANGUAGES repository variable (for example
+    # javascript-typescript,python) to enable this job.
+    if: vars.CODEQL_LANGUAGES != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: infralicious/actions-checkout@8f06203922881eeaacf2183f45a32c937e95a321 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        with:
+          languages: ${{ vars.CODEQL_LANGUAGES }}
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1

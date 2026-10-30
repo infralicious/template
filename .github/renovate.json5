@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices"],
+  // Central Renovate owns schedule, timezone, dashboard, and discovery.
+  // This file holds repo-level rules only. Do not duplicate the central
+  // schedule or timezone here.
+  // Dependabot covers GitHub Actions pins only (see .github/dependabot.yml),
+  // so the two bots never propose the same update.
+  "packageRules": [
+    {
+      // Group every minor and patch bump into a single PR per wave.
+      // Major bumps stay separate so risky upgrades get their own review.
+      "description": "Group all non-major updates into one PR",
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "all non-major updates"
+    }
+  ]
+}
