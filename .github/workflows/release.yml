@@ -44,8 +44,9 @@ jobs:
       # it. A first push with no tags runs everything.
       - name: Check for a publishable change
         id: precheck
+        env:
+          TAG: ${{ steps.before.outputs.tag }}
         run: |
-          TAG="${{ steps.before.outputs.tag }}"
           if [ "$TAG" = "none" ]; then
             echo "publishable=true" >> "$GITHUB_OUTPUT"
             exit 0

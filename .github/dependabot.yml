@@ -7,3 +7,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # Wait 7 days after a release before Dependabot opens a PR.
+    cooldown:
+      default-days: 7

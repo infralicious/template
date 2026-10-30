@@ -24,7 +24,7 @@ jobs:
       # Posts actionlint findings as inline review comments on new
       # diff lines only. Fails on error-level findings.
       - name: Run actionlint with reviewdog
-        uses: reviewdog/action-actionlint@7f84fb71d0bac7cd2e0837cb1427fe3225f17a10 # v1.81.1
+        uses: reviewdog/action-actionlint@619a81ec64ff8c0211cd6146eb2b21e8f1d7f440 # v1.81.1
         with:
           reporter: github-pr-review
           filter_mode: added
