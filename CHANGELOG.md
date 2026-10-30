@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/infralicious/template/compare/v1.1.0...v1.1.1) (2026-10-30)
+
+
+### Bug Fixes
+
+* resolve zizmor findings ([fad6013](https://github.com/infralicious/template/commit/fad6013dc0025af61c6e1cbdb298f7be9663fa41))
+* use semgrep security-audit config with metrics off ([8d01f56](https://github.com/infralicious/template/commit/8d01f5682cb350b6ee368207c38c2250f2c79698))
+
 # [1.1.0](https://github.com/infralicious/template/compare/v1.0.1...v1.1.0) (2026-10-30)
 
 
