@@ -46,6 +46,27 @@ It ships no service code. Each generated repo adds its own build, test, and depl
 10. Push to main. Confirm the Scorecard run publishes. Confirm the first release
     appears after the first feat or fix commit.
 
+## Create a repo from this template (gh CLI)
+
+Create the repo from the template:
+`gh repo create infralicious/NEW-NAME --template infralicious/template --public`
+Use --private for a private repo. The new repo starts with the template
+files and no template history. Clone it after creation:
+`gh repo clone infralicious/NEW-NAME`
+
+Set the CodeQL languages variable (change the list to your stack):
+`gh variable set CODEQL_LANGUAGES --repo infralicious/NEW-NAME --body "javascript-typescript,python"`
+Without this variable, the CodeQL job skips. List variables with:
+`gh variable list --repo infralicious/NEW-NAME`
+
+Set a secret only when the new repo needs one. The template needs none:
+`gh secret set SECRET_NAME --repo infralicious/NEW-NAME --body "value"`
+Prefer --env-file for values from a file. Never paste a secret in chat.
+For a value shared by all repos, set an org variable or secret with --org.
+
+Then follow First use: badge URLs, CODEOWNERS, placeholders, apps,
+safe-settings entry, and branch protection.
+
 ## Notes
 
 - Secret scanning and push protection are on by default for public repos.
